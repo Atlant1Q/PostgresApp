@@ -1,0 +1,32 @@
+﻿@page
+@using PostgresApp.Pages.Users
+@model IndexModel
+
+<h2>Пользаки</h2>
+
+<p>
+    <a asp-page="Create">Создать нового пользака</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.Name</td>
+                <td>@user.Email</td>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@user.Id">Редактировать</a> |
+                    <a asp-page="Delete" asp-route-id="@user.Id">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

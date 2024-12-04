@@ -1,0 +1,24 @@
+﻿@page
+@model PostgresApp.Pages.Users.DeleteModel
+
+<h2>Удаление пользака</h2>
+
+<h3>Удалить пользака?</h3>
+
+<div>
+    <h4>Пользак</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">Name</dt>
+        <dd class = "col-sm-10">@Model.User.Name</dd>
+        <dt class = "col-sm-2">Email</dt>
+        <dd class = "col-sm-10">@Model.User.Email</dd>
+    </dl>
+</div>
+
+<form method="post">
+    <input type="hidden" asp-for="User.Id" />
+    <button type="submit" class="btn btn-danger">Удалить</button>
+</form>
+
+<a asp-page="Index">Вернуться к списку</a>
